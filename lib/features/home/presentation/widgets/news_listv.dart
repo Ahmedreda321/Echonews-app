@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news/widgets/news_comp.dart';
+import 'package:news/features/home/presentation/widgets/news_comp.dart';
 import 'package:news/models/news_model.dart';
 
 // ignore: must_be_immutable

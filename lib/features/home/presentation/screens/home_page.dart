@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news/widgets/catlistv.dart';
-import 'package:news/widgets/news_list_view_builder.dart';
+import 'package:news/features/home/presentation/widgets/catlistv.dart';
+import 'package:news/features/home/presentation/widgets/news_list_view_builder.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

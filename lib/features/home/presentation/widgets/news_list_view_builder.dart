@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news/models/news_model.dart';
-import 'package:news/services/news_service.dart';
-import 'package:news/widgets/mian_shimmer.dart';
-import 'package:news/widgets/news_listv.dart';
+import 'package:news/core/services/news_service.dart';
+import 'package:news/features/home/presentation/widgets/mian_shimmer.dart';
+import 'package:news/features/home/presentation/widgets/news_listv.dart';
 
 class NewsListViewBuilder extends StatefulWidget {
   const NewsListViewBuilder({super.key, required this.query});

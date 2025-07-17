@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news/widgets/category_comp.dart';
+import 'package:news/features/home/presentation/widgets/category_comp.dart';
 import 'package:news/models/category_model.dart';
 
 class Catlistv extends StatelessWidget {

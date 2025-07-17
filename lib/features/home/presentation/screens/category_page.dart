@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/models/category_model.dart';
-import 'package:news/widgets/news_list_view_builder.dart';
+import 'package:news/features/home/presentation/widgets/news_list_view_builder.dart';
 
 // ignore: must_be_immutable
 class CategoryPage extends StatelessWidget {

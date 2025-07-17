@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/models/category_model.dart';
-import 'package:news/screens/category_page.dart';
+import 'package:news/features/home/presentation/screens/category_page.dart';
 
 // ignore: camel_case_types
 class category_comp extends StatelessWidget {
