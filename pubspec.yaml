@@ -17,18 +17,20 @@ dependencies:
   flutter_bloc: ^9.1.1
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
+  freezed: ^2.4.2
+  freezed_annotation: ^2.4.1
   http: ^1.2.1
   internet_connection_checker: ^3.0.1
   logger: ^2.6.0
   pretty_dio_logger: ^1.4.0
-  retrofit: ^4.6.0
-  retrofit_generator: ^10.0.0
+  retrofit: ^4.0.1
   shared_preferences: ^2.5.3
   shimmer: ^3.0.0
   stroke_text: ^0.0.3
   webview_flutter: ^4.8.0
 
 dev_dependencies:
+  retrofit_generator: ^9.7.0
   build_runner: ^2.0.0
   flutter_lints: ^3.0.0
   flutter_test:
