@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news/models/news_model.dart';
+import 'package:news/features/home/domain/models/news_model.dart';
 import 'package:news/features/home/presentation/screens/webViwe.dart';
 
 class NewsComp extends StatefulWidget {
@@ -81,11 +81,6 @@ class _NewsCompState extends State<NewsComp> {
                     height: 200,
                     fit: BoxFit.cover,
                     width: 365,
-                    // imageBuilder: (context, imageProvider) => ColorFiltered(
-                    //   colorFilter: ColorFilter.mode(
-                    //     Colors.grey.withOpacity(1),
-                    //     BlendMode.color,
-                    //   ),
                   ),
                 ),
               ),

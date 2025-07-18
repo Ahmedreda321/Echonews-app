@@ -1,6 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:news/models/news_model.dart';
+import 'package:news/features/home/domain/models/news_model.dart';
 import 'package:news/core/services/news_service.dart';
 import 'package:news/features/home/presentation/widgets/mian_shimmer.dart';
 import 'package:news/features/home/presentation/widgets/news_listv.dart';
@@ -19,8 +18,7 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   @override
   void initState() {
     super.initState();
-    future = NewsService(Dio()).getnews(query: widget.query);
-    print('future: $future');
+    future = NewsService().getnews(query: widget.query);
   }
 
   @override
@@ -44,7 +42,7 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
           );
         } else {
           return const SliverToBoxAdapter(
-            child: main_shimmer(),
+            child: MainShimmer(),
           );
         }
       },

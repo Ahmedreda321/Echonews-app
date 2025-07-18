@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:news/models/news_model.dart';
+import 'package:news/core/network/api_service.dart';
+import 'package:news/features/home/domain/models/news_model.dart';
+
+import '../network/dio_factory.dart';
 
 class NewsService {
-  final Dio dio;
-  NewsService(this.dio);
-
+final ApiService apiService = ApiService(DioFactory.getDio());
   Future<List<NewsModel>> getnews({required String query}) async {
     try {
       final dio = Dio();
@@ -15,14 +16,13 @@ class NewsService {
 
       List<dynamic> articles = jsonData['articles'];
 
-      // ignore: non_constant_identifier_names
-      List<NewsModel> NewsList = [];
+      List<NewsModel> newsList = [];
 
       for (var article in articles) {
         NewsModel newsModel = NewsModel.fromjson(article);
-        NewsList.add(newsModel);
+        newsList.add(newsModel);
       }
-      return NewsList;
+      return newsList;
     } on Exception catch (e) {
       print(e);
       return [];

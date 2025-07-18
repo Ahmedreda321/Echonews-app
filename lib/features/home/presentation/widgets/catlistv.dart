@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/presentation/widgets/category_comp.dart';
-import 'package:news/models/category_model.dart';
+
+import '../../domain/models/category_model.dart';
+import 'category_comp.dart';
 
 class Catlistv extends StatelessWidget {
   const Catlistv({super.key});
@@ -8,13 +9,13 @@ class Catlistv extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50, // Adjust height as needed
+      height: 50, 
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
-          itemCount: category_list.length,
+          itemCount: categoryList.length,
           itemBuilder: (context, i) {
-            return category_comp(catmodel: category_list[i]);
+            return Category(categoryModel: categoryList[i]);
           }),
     );
   }

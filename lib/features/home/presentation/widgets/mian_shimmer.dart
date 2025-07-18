@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:news/features/home/presentation/widgets/shimmer_widget.dart';
 import 'package:shimmer/shimmer.dart';
 
-class main_shimmer extends StatelessWidget {
-  const main_shimmer({
+class MainShimmer extends StatelessWidget {
+  const MainShimmer({
     super.key,
   });
 

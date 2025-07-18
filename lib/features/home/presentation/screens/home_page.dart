@@ -7,14 +7,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: const Color(0xffD1FFDD),
+    return  Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xffD1FFDD),
-          scrolledUnderElevation: 0,
-          centerTitle: true,
           title: Stack(children: [
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
@@ -57,7 +51,7 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      
     );
   }
 }

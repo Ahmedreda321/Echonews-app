@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:news/models/category_model.dart';
+import 'package:news/features/home/domain/models/category_model.dart';
 import 'package:news/features/home/presentation/widgets/news_list_view_builder.dart';
 
 // ignore: must_be_immutable
 class CategoryPage extends StatelessWidget {
-  CategoryPage({super.key, required this.catmodel});
-  category_model catmodel;
+  CategoryPage({super.key, required this.categoryModel});
+  CategoryModel categoryModel;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +16,7 @@ class CategoryPage extends StatelessWidget {
             backgroundColor: const Color(0xffD1FFDD),
             centerTitle: true,
             title: Text(
-              '${catmodel.typ} News',
+              '${categoryModel.type} News',
               style: const TextStyle(
                   color: Colors.black,
                   fontFamily: 'crimson',
@@ -35,7 +35,7 @@ class CategoryPage extends StatelessWidget {
                   thickness: 1,
                 ),
               ),
-              NewsListViewBuilder(query: catmodel.typ)
+              NewsListViewBuilder(query: categoryModel.type)
             ],
           )),
     );
