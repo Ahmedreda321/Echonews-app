@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news/features/home/domain/models/news_model.dart';
-import 'package:news/features/home/presentation/screens/webViwe.dart';
+import 'package:news/features/home/data/models/news_model.dart';
+import 'package:news/features/home/presentation/screens/web_view.dart';
 
 class NewsComp extends StatefulWidget {
   const NewsComp({super.key, required this.newsModel});

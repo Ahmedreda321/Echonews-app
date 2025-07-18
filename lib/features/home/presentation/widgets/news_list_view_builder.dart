@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/domain/models/news_model.dart';
+import 'package:news/features/home/data/models/news_model.dart';
 import 'package:news/core/services/news_service.dart';
 import 'package:news/features/home/presentation/widgets/mian_shimmer.dart';
-import 'package:news/features/home/presentation/widgets/news_listv.dart';
+import 'package:news/features/home/presentation/widgets/news_list_view.dart';
 
 class NewsListViewBuilder extends StatefulWidget {
   const NewsListViewBuilder({super.key, required this.query});
@@ -13,22 +13,21 @@ class NewsListViewBuilder extends StatefulWidget {
 }
 
 class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
-  late Future<List<NewsModel>> future;
+  late Future<List<NewsModel>> news;
 
   @override
   void initState() {
     super.initState();
-    future = NewsService().getnews(query: widget.query);
+    news = NewsService().getnews(query: widget.query);
   }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<NewsModel>>(
-      future: future,
+      future: news,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          //  print('data: ${snapshot.data}');
-          return NewsListv(newslist: snapshot.data!);
+          return NewsListView(newslist: snapshot.data!);
         } else if (snapshot.hasError) {
           return const SliverToBoxAdapter(
             child: Text(
@@ -49,71 +48,3 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
     );
   }
 }
-
-
-
-
-
-
-// import 'package:dio/dio.dart';
-// import 'package:flutter/material.dart';
-// import 'package:news/models/news_model.dart';
-// import 'package:news/services/news_service.dart';
-// import 'package:news/widgets/news_listv.dart';
-
-// class NewsListViewBuilder extends StatefulWidget {
-//   // ignore: non_constant_identifier_names
-//   const NewsListViewBuilder({super.key, required this.category_name});
-//   // ignore: non_constant_identifier_names
-//   final String category_name;
-
-//   @override
-//   State<NewsListViewBuilder> createState() => _NewsListViewBuilderState();
-// }
-
-// class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
-//   List<NewsModel> newslist = [];
-//   bool isLoading = true;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     getGeneralNews();
-//   }
-
-//   Future<void> getGeneralNews() async {
-//     try {
-//       newslist = await NewsService(Dio()).getnews(query: widget.category_name);
-//     } catch (e) {
-//       // Handle the error appropriately here
-//       print('Error fetching news: $e');
-//     } finally {
-//       isLoading = false;
-//       setState(() {});
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return isLoading
-//         ? const SliverToBoxAdapter(
-//             child: Center(
-//               child: CircularProgressIndicator(
-//                 color: Colors.grey,
-//               ),
-//             ),
-//           )
-//         : newslist.isEmpty
-//             ? const SliverToBoxAdapter(
-//                 child: Text(
-//                   'oops there is no news now,\n try later',
-//                   style: TextStyle(
-//                       // color: Colors.grey,
-//                       fontSize: 30,
-//                       fontWeight: FontWeight.bold,
-//                       fontFamily: 'crimson'),
-//                 ),
-//               )
-//             : NewsListv(newslist: newslist);
-//   }
-// }

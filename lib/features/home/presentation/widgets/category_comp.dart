@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/domain/models/category_model.dart';
+import 'package:news/features/home/presentation/models/category_model.dart';
 import 'package:news/features/home/presentation/screens/category_page.dart';
 
 class Category extends StatelessWidget {

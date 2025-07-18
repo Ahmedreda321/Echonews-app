@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/presentation/widgets/catlistv.dart';
-import 'package:news/features/home/presentation/widgets/news_list_view_builder.dart';
+
+import '../widgets/catlistv.dart';
+import '../widgets/news_list_view_builder.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -38,7 +39,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SliverToBoxAdapter(
-              child: Catlistv(),
+              child: CategoryListView(),
             ),
             SliverToBoxAdapter(
               child: Divider(

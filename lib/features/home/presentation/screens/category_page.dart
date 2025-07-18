@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/domain/models/category_model.dart';
+import 'package:news/features/home/presentation/models/category_model.dart';
 import 'package:news/features/home/presentation/widgets/news_list_view_builder.dart';
 
 // ignore: must_be_immutable
@@ -14,7 +14,7 @@ class CategoryPage extends StatelessWidget {
           appBar: AppBar(
             scrolledUnderElevation: 0,
             backgroundColor: const Color(0xffD1FFDD),
-            centerTitle: true,
+            centerTitle: true, 
             title: Text(
               '${categoryModel.type} News',
               style: const TextStyle(

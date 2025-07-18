@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constants/app_constants.dart';
-import '../utils/app_border_radius.dart';
-import '../utils/app_size.dart';
 import 'app_colors.dart';
 
 class AppTheme {
   static ThemeData get lightTheme => ThemeData(
         useMaterial3: true,
         colorScheme: _lightColorScheme,
-        primaryColor: AppColor.black,
+        primaryColor: AppColor.primaryColor,
         scaffoldBackgroundColor: AppColor.primaryColor,
         fontFamily: AppConstants.fontFamily,
         brightness: Brightness.light,
         appBarTheme: _appBarTheme,
-        elevatedButtonTheme: _elevatedButtonTheme,
       );
 
 
@@ -40,19 +36,7 @@ class AppTheme {
         iconTheme: IconThemeData(color: AppColor.black),
       );
 
-  static ElevatedButtonThemeData get _elevatedButtonTheme =>
-      ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          minimumSize: Size(
-            double.infinity,
-            AppSize.elvatedButtonHeight.h,
-          ),
-          backgroundColor: AppColor.blue,
-          shape: RoundedRectangleBorder(
-            borderRadius: AppBorderRadius.smallBorderRadius,
-          ),
-        ),
-      );
+ 
   static TextStyle textStyle(double size, FontWeight weight, Color color) {
     return TextStyle(
       fontSize: size,

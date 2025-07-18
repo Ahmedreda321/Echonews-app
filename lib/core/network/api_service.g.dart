@@ -20,9 +20,9 @@ class _ApiService implements ApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<NewsResponse> getNews(String query, String apiKey) async {
+  Future<NewsResponse> getNews(String query) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'q': query, r'apiKey': apiKey};
+    final queryParameters = <String, dynamic>{r'q': query};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<NewsResponse>(

@@ -18,6 +18,5 @@ abstract class ApiService {
   @GET(ApiConstants.everything)
   Future<NewsResponse> getNews(
     @Query('q') String query,
-    @Query('apiKey') String apiKey,
   );
 }

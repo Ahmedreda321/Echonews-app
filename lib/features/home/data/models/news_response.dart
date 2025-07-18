@@ -1,6 +1,6 @@
 import 'package:news/features/home/data/models/base_response.dart';
 
-import '../../domain/models/news_model.dart';
+import 'news_model.dart';
 
 class NewsResponse extends BaseResponse {
   final List<NewsModel> articles;

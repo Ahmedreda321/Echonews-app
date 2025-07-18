@@ -1,13 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
 
-import 'package:news/features/home/domain/models/news_model.dart';
+import 'package:news/features/home/data/models/news_model.dart';
 import 'package:news/features/home/presentation/widgets/news_comp.dart';
 
-class NewsListv extends StatelessWidget {
+class NewsListView extends StatelessWidget {
   List<NewsModel> newslist ;
-  NewsListv({
-    super.key,
+  NewsListView({
+    super.key, 
     required this.newslist,
   });
 

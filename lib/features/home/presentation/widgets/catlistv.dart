@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/models/category_model.dart';
+import '../models/category_model.dart';
 import 'category_comp.dart';
 
-class Catlistv extends StatelessWidget {
-  const Catlistv({super.key});
+class CategoryListView extends StatelessWidget {
+  const CategoryListView({super.key});
 
   @override
   Widget build(BuildContext context) {

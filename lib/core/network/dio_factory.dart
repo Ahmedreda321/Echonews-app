@@ -1,17 +1,22 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
+import 'endpoint_constants.dart';
+
 class DioFactory {
   DioFactory._();
   static Dio? _dio;
 
-  static Dio getDio()  {
+  static Dio getDio() {
     Duration timeout = const Duration(seconds: 30);
     if (_dio == null) {
       _dio = Dio();
       _dio!
         ..options.connectTimeout = timeout
-        ..options.receiveTimeout = timeout;
+        ..options.receiveTimeout = timeout
+        ..options.queryParameters = {
+          'apiKey': ApiConstants.apiKey,
+        };
       interceptor();
       addHeaders();
       return _dio!;
@@ -37,5 +42,4 @@ class DioFactory {
       'Accept': 'application/json',
     });
   }
- 
 }
