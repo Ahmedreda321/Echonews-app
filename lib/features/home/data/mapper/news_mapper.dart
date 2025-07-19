@@ -1,3 +1,4 @@
+import '../../../../core/constants/app_constants.dart';
 import '../../../../core/constants/strings_constants.dart';
 import '../../presentation/models/news.dart';
 import '../models/news_model.dart';
@@ -7,7 +8,7 @@ extension NewsMapper on NewsModel {
     return News(
         title: title ?? AppStrings.empty,
         description: subtitle ?? AppStrings.empty,
-        urlToImage: image ?? AppStrings.empty,
+        urlToImage: image ?? AppConstants.defaultImage,
         url: url ?? AppStrings.empty);
   }
 }

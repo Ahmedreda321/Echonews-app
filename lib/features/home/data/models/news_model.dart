@@ -16,4 +16,10 @@ class NewsModel {
         subtitle: json['description'],
         url: json['url']);
   }
+  tojson() => {
+        'urlToImage': image,
+        'title': title,
+        'description': subtitle,
+        'url': url
+      };
 }

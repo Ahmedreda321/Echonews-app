@@ -14,4 +14,7 @@ class NewsResponse extends BaseResponse {
           .toList(),
     );
   }
+  toJson() => {
+        'articles': articles.map((e) => e.tojson()).toList(),
+      };
 } 

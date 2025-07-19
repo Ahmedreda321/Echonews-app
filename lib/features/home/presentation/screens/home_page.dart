@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/catlistv.dart';
 import '../widgets/news_list_view_builder.dart';
 
 class HomePage extends StatelessWidget {
