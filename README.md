@@ -44,3 +44,17 @@ lib/
 ├── echonews.dart
 └── main.dart
 ```
+## 📦 Core Packages
+
+| Package | Usage |
+|---------|-------|
+| `flutter_bloc` | State management |
+| `dio` + `retrofit` | API communication |
+| `shared_preferences` | Local storage |
+
+### Installation
+```bash
+git clone https://github.com/Ahmedreda321/Echonews-app
+cd Echonews-app
+flutter pub get
+```
