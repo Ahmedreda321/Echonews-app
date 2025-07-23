@@ -1,17 +1,17 @@
-# news
+# EchoNews
 
-A new Flutter project.
+EchoNews is a Flutter application that delivers the latest news articles from various sources. The app supports offline reading, category filtering, and provides a modern, responsive user interface.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Browse news articles by category (e.g., technology, business, entertainment, health, science, sports)
+- Offline mode with cached news for reading without internet
+- Custom error handling and loading indicators
+- Responsive design for all screen sizes
+- Modern UI with custom fonts and themes
+- Secure and persistent local storage
+- State management using BLoC (flutter_bloc)
+- API integration using Dio and Retrofit
 
-A few resources to get you started if this is your first Flutter project:
+## Project Structure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# Echonews-app" 
