@@ -1,46 +1,84 @@
 name: news
-description: "A new Flutter project."
-publish_to: 'none' 
+description: "My News App Project That I Made To Learn Some New Topics"
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.0 <4.0.0'
+  sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
+  cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.6
-  stroke_text: ^0.0.3
-  carousel_slider: ^4.2.1
-  http: ^1.2.1
-  dio: ^5.4.3+1
+  #for images 
   cached_network_image: ^3.3.1
+  
+  # for 
+  dartz: ^0.10.1
+
+  # for network requests  
+  retrofit: ^4.0.1
+  dio: ^5.4.3+1
+  pretty_dio_logger: ^1.4.0
+  
+  # for state management
+  flutter_bloc: ^9.1.1
+
+  # for responsive design
+  flutter_screenutil: ^5.9.3
+
+  # for local storage
+  flutter_secure_storage: ^9.2.4
+  shared_preferences: ^2.5.3
+
+
+  # for state serialization
+  freezed: ^2.4.2
+  freezed_annotation: ^2.4.1
+  
+  # for dependency injection
+  get_it: ^8.0.3
+
+  # for checking internet
+  internet_connection_checker: ^3.0.1
+
+  # for logging and debugging
+  logger: ^2.6.0
+
+  # for shimmer effect
+  skeletonizer: ^2.1.0+1
+  
+  # for webview
   webview_flutter: ^4.8.0
-  shimmer: ^3.0.0
 
 dev_dependencies:
+  
+  # for code generation
+  build_runner: ^2.0.0
+
+  flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.0
+  # for code generation on retrofit  
+  retrofit_generator: ^9.7.0
 
 flutter:
-
   uses-material-design: true
 
   assets:
-    - assets/categories/
-    - assets/news/
+    - assets/images/
 
   fonts:
     - family: bebas
       fonts:
         - asset: assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf
+    # main font
     - family: crimson
       fonts:
         - asset: assets/fonts/Crimson_Text/CrimsonText-Regular.ttf
+    #AppBar font
     - family: Abril
       fonts:
         - asset: assets/fonts/Abril_Fatface/AbrilFatface-Regular.ttf
-       

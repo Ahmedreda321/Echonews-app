@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:news/screens/home_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'core/di/service_locator.dart';
+import 'echonews.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    // return MaterialApp();
-    return const HomePage();
-  }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ScreenUtil.ensureScreenSize();
+  await setup();
+  runApp(const EchoNews());
 }
