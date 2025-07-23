@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/app_constants.dart';
 import 'app_colors.dart';
+import 'app_text_styles.dart';
 
 class AppTheme {
   static ThemeData get lightTheme => ThemeData(
@@ -12,15 +13,14 @@ class AppTheme {
         fontFamily: AppConstants.fontFamily,
         brightness: Brightness.light,
         appBarTheme: _appBarTheme,
+        elevatedButtonTheme: _appElevatedButtonTheme,
       );
-
-
 
   static ColorScheme get _lightColorScheme => const ColorScheme(
         brightness: Brightness.light,
         primary: AppColor.primaryColor,
         onPrimary: AppColor.grayColor,
-        secondary: AppColor.blue,
+        secondary: AppColor.secondaryColor,
         onSecondary: AppColor.white,
         error: AppColor.errorColor,
         onError: AppColor.white,
@@ -36,7 +36,16 @@ class AppTheme {
         iconTheme: IconThemeData(color: AppColor.black),
       );
 
- 
+  static ElevatedButtonThemeData get _appElevatedButtonTheme =>
+      ElevatedButtonThemeData(
+          style: ButtonStyle(
+        backgroundColor:
+            const WidgetStatePropertyAll<Color>(AppColor.secondaryColor),
+        foregroundColor: const WidgetStatePropertyAll<Color>(AppColor.black),
+        textStyle:
+            WidgetStatePropertyAll<TextStyle>(AppTextStyles.elevatedButton),
+      ));
+
   static TextStyle textStyle(double size, FontWeight weight, Color color) {
     return TextStyle(
       fontSize: size,
@@ -45,4 +54,3 @@ class AppTheme {
     );
   }
 }
-//TODO refactor

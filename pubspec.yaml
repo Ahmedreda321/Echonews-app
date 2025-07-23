@@ -19,22 +19,25 @@ dependencies:
   flutter_secure_storage: ^9.2.4
   freezed: ^2.4.2
   freezed_annotation: ^2.4.1
+  get_it: ^8.0.3
   http: ^1.2.1
   internet_connection_checker: ^3.0.1
   logger: ^2.6.0
   pretty_dio_logger: ^1.4.0
+  redacted: ^1.0.13
   retrofit: ^4.0.1
   shared_preferences: ^2.5.3
   shimmer: ^3.0.0
+  skeletonizer: ^2.1.0+1
   stroke_text: ^0.0.3
   webview_flutter: ^4.8.0
 
 dev_dependencies:
-  retrofit_generator: ^9.7.0
   build_runner: ^2.0.0
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  retrofit_generator: ^9.7.0
 
 flutter:
   uses-material-design: true
@@ -47,6 +50,7 @@ flutter:
     - family: crimson
       fonts:
         - asset: assets/fonts/Crimson_Text/CrimsonText-Regular.ttf
+    #AppBar font
     - family: Abril
       fonts:
         - asset: assets/fonts/Abril_Fatface/AbrilFatface-Regular.ttf

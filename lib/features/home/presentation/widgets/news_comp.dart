@@ -1,109 +1,144 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news/features/home/data/models/news_model.dart';
-import 'package:news/features/home/presentation/screens/web_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news/core/constants/app_constants.dart';
+import 'package:news/core/extensions/navigation_extensions.dart';
+import 'package:news/core/theme/app_colors.dart';
+import 'package:news/core/utils/app_size.dart';
 
-class NewsComp extends StatefulWidget {
-  const NewsComp({super.key, required this.newsModel});
-  final NewsModel newsModel;
+import '../../../../core/theme/app_text_styles.dart';
+import '../models/news.dart';
+import '../screens/web_view.dart';
 
-  @override
-  State<NewsComp> createState() => _NewsCompState();
-}
+class NewsWidget extends StatelessWidget {
+  const NewsWidget({super.key, required this.news});
+  final News news;
 
-class _NewsCompState extends State<NewsComp> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
+        spacing: 10.h,
         mainAxisSize: MainAxisSize.min,
         children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Webviwe(
-                            url: widget.newsModel.url ??
-                                "https://www.edarabia.com/ar/5-%D9%85%D9%86-%D8%A3%D8%AC%D9%85%D9%84-%D8%B5%D9%84%D8%A7%D8%A9-%D8%B9%D9%84%D9%8A-%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%84/",
-                          )));
-            },
-            child: Text(
-              widget.newsModel.title ?? "",
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                  height: 1,
-                  fontFamily: 'bebas',
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
-                  fontSize: 26),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8, top: 20),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 2,
-                      color: Colors.black,
-                    ),
-                  ),
-                  height: 200,
-                  width: 375,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8),
-                child: ColorFiltered(
-                  colorFilter: ColorFilter.mode(
-                    Colors.grey.withOpacity(1),
-                    BlendMode.color,
-                  ),
-                  child: CachedNetworkImage(
-                    imageUrl: widget.newsModel.image ??
-                        "https://media.wired.com/photos/5b17381815b2c744cb650b5f/master/w_2560%2Cc_limit/GettyImages-134367495.jpg",
-                    placeholder: (context, url) => const Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                    errorWidget: (context, url, error) => Image.network(
-                      "https://media.wired.com/photos/5b17381815b2c744cb650b5f/master/w_2560%2Cc_limit/GettyImages-134367495.jpg",
-                      height: 200,
-                      fit: BoxFit.cover,
-                      width: 365,
-                    ),
-                    height: 200,
-                    fit: BoxFit.cover,
-                    width: 365,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          Text(
-            widget.newsModel.subtitle ?? "",
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-                fontFamily: 'crimson',
-                fontSize: 19,
-                color: Color.fromARGB(255, 114, 110, 110)),
-          ),
+          // title
+          NewsTitle(title: news.title, url: news.url),
+
+          // image
+          NewsImage(imageUrl: news.urlToImage),
+
+          // description
+          NewsDescription(description: news.description),
           const Divider(
             color: Colors.grey,
             thickness: 1,
           ),
         ],
       ),
+    );
+  }
+}
+
+class NewsDescription extends StatelessWidget {
+  const NewsDescription({
+    super.key,
+    required this.description,
+  });
+
+  final String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      description,
+      maxLines: 3,
+      style: AppTextStyles.newsDescription,
+    );
+  }
+}
+
+class NewsImage extends StatelessWidget {
+  const NewsImage({
+    super.key,
+    required this.imageUrl,
+  });
+
+  final String imageUrl;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: AppSize.newsImageHeight + 10.h,
+      width: double.infinity,
+      child: Stack(
+        children: [
+          Positioned(
+            top: 20,
+            left: 12,
+            child: Container(
+              width: AppSize.newsImageWidth,
+              height: AppSize.newsImageHeight,
+              color: AppColor.grayColor,
+            ),
+          ),
+          Positioned(
+            bottom: 12,
+            right: 12,
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
+              color: AppColor.newsImageColor,
+              colorBlendMode: BlendMode.color,
+              placeholder: (context, url) => const Center(
+                child: CircularProgressIndicator(),
+              ),
+              errorWidget: (context, url, error) => const ErrorImage(),
+              height: AppSize.newsImageHeight,
+              fit: BoxFit.cover,
+              width: AppSize.newsImageWidth,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class NewsTitle extends StatelessWidget {
+  const NewsTitle({
+    super.key,
+    required this.title,
+    required this.url,
+  });
+
+  final String title, url;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: () {
+          context.push(
+            Webviwe(
+              url: url,
+            ),
+          );
+        },
+        child: Text(title, maxLines: 2, style: AppTextStyles.newsTitle));
+  }
+}
+
+class ErrorImage extends StatelessWidget {
+  const ErrorImage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(
+      AppConstants.defaultImage,
+      height: AppSize.newsImageHeight,
+      fit: BoxFit.cover,
+      width: AppSize.newsImageWidth,
     );
   }
 }

@@ -11,10 +11,10 @@ class NewsModel {
 
   factory NewsModel.fromjson(json) {
     return NewsModel(
-        image: json['urlToImage'],
-        title: json['title'],
-        subtitle: json['description'],
-        url: json['url']);
+        image: json['urlToImage'] as String?,
+        title: json['title'] as String?,
+        subtitle: json['description'] as String?,
+        url: json['url'] as String?);
   }
   tojson() => {
         'urlToImage': image,
@@ -22,4 +22,9 @@ class NewsModel {
         'description': subtitle,
         'url': url
       };
+
+      @override
+  String toString() {
+    return 'NewsModel(image: $image, title: $title, subtitle: $subtitle, url: $url)';
+  }
 }

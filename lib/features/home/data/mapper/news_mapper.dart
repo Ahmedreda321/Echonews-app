@@ -9,7 +9,7 @@ extension NewsMapper on NewsModel {
         title: title ?? AppStrings.empty,
         description: subtitle ?? AppStrings.empty,
         urlToImage: image ?? AppConstants.defaultImage,
-        url: url ?? AppStrings.empty);
+        url: url ?? AppConstants.defaultUrl);
   }
 }
 

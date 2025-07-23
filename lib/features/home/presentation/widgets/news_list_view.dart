@@ -1,25 +1,19 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
 
-import 'package:news/features/home/data/models/news_model.dart';
-import 'package:news/features/home/presentation/widgets/news_comp.dart';
+import '../models/news.dart';
+import 'news_comp.dart';
 
-class NewsListView extends StatelessWidget {
-  List<NewsModel> newslist ;
-  NewsListView({
-    super.key, 
-    required this.newslist,
-  });
+class NewsList extends StatelessWidget {
+  const NewsList({super.key, required this.newslist});
+ final List<News> newslist;
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        childCount: newslist.length,
-        (context, i) {
-          return NewsComp(newsModel: newslist[i]);
-        },
-      ),
+    return  ListView.builder(
+      itemCount: newslist.length,
+      itemBuilder: (context, index) {
+        return NewsWidget(news: newslist[index]);
+      },
     );
   }
 }

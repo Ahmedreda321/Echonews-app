@@ -73,7 +73,7 @@ class NewsLocalDataSource {
 
   Future<NewsResponse> getLastCachedNewsResponse() async {
     final models = await _getCachedNewsModels();
-    return NewsResponse(articles: models);
+    return NewsResponse( status: "" , totalResults: 0 , articles: models);
   }
 
 

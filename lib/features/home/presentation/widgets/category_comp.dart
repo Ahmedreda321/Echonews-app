@@ -1,32 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/presentation/models/category_model.dart';
-import 'package:news/features/home/presentation/screens/category_page.dart';
+
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/app_border_radius.dart';
+import '../../../../core/utils/app_margin.dart';
+import '../../../../core/utils/app_padding.dart';
 
 class Category extends StatelessWidget {
-  const Category({super.key, required this.categoryModel});
-  final CategoryModel categoryModel;
+  const Category(
+      {super.key,
+      required this.categoryName,
+      this.onTap,
+      this.isSelected = false});
+  final String categoryName;
+  final VoidCallback? onTap;
+  final bool isSelected;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
-      child: OutlinedButton(
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            return CategoryPage(categoryModel: categoryModel);
-          }));
-        },
-        child: SizedBox(
-          height: 50,
-          child: Center(
-            child: Text(
-              categoryModel.type,
-              style: const TextStyle(
-                  fontFamily: 'crimson',
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black),
-            ),
+    return GestureDetector(
+      onTap: onTap ,
+      child: Container(
+        margin: AppMargin.categoryMargin,
+        padding: AppPadding.categoryPadding,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: isSelected ? AppColor.black : AppColor.grayColor,
           ),
+          color: isSelected ? AppColor.primaryColor : AppColor.secondaryColor,
+          borderRadius:
+              BorderRadius.circular(AppBorderRadius.categoryBorderRadius),
+        ),
+        child: Text(
+          categoryName,
+          style: AppTextStyles.category,
         ),
       ),
     );

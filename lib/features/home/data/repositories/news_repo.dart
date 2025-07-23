@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:news/core/network/error_handeler.dart';
+import 'package:news/core/services/logger_service.dart';
 import 'package:news/features/home/data/mapper/news_mapper.dart';
 
 import '../../../../core/errors/failures.dart';
@@ -12,7 +13,7 @@ class NewsRepo {
   final NewsRemoteDataSource newsRemoteDataSource;
   final NewsLocalDataSource newsLocalDataSource;
   final NetworkInfo networkInfo;
-  
+
   NewsRepo({
     required this.newsRemoteDataSource,
     required this.newsLocalDataSource,
@@ -20,25 +21,23 @@ class NewsRepo {
   });
 
   Future<Either<Failure, List<News>>> getNews(String query) async {
-  
     if (await networkInfo.isConnected) {
       try {
         final remoteNews = await newsRemoteDataSource.getNews(query);
-
-        await newsLocalDataSource.cacheNews(remoteNews);
-        
-        return Right(remoteNews.articles.map((e) => e.toNews()).toList());
-      } catch (error) {
-
+      //  await newsLocalDataSource.cacheNews(remoteNews);
+        final response = remoteNews.articles.toNewsList();
+        return Right(response);
+      } catch (error, stackTrace) {
+        AppLogger.e( 'Failed to fetch news: $error \n and stack trace: $stackTrace', stackTrace);
         return await _handleErrorOrGetCached(error);
       }
-    }     
-    else {
+    } else {
       return await _getCachedNewsOrError();
     }
   }
 
-  Future<Either<Failure, List<News>>> _handleErrorOrGetCached(dynamic error) async {
+  Future<Either<Failure, List<News>>> _handleErrorOrGetCached(
+      dynamic error) async {
     try {
       final cachedNews = await newsLocalDataSource.getCachedNews();
       if (cachedNews.isNotEmpty) {
