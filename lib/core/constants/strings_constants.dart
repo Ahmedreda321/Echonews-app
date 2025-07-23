@@ -8,6 +8,7 @@ class AppStrings {
   static const int zero = 0;
   static const String tryAgain = 'Try Again';
   static const String noNews = "There's no news Now\nPlease try again later";
+   static const String offlineMode = 'You are offline mode\nPlease check your connection';
   //******************************************************************************************************************* *//
   //? Error Messages
   //******************************************************************************************************************* *//
@@ -28,4 +29,6 @@ class AppStrings {
       'No Internet Connection,\n please check your connection';
   static const String cacheError = 'Cache Error';
   static const String connectTimeoutError = 'Connection Timeout';
+
+ 
 }

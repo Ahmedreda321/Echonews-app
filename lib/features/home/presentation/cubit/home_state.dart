@@ -11,5 +11,7 @@ class HomeState<T> with _$HomeState<T> {
   const factory HomeState.loaded({
     required List<News> news,
   }) = HomeLoaded;
+    const factory HomeState.loadedOffline({required List<News> news}) = HomeLoadedOffline; 
+
   const factory HomeState.error({required String message}) = HomeError;
 }

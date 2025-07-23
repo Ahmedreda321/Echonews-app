@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/strings_constants.dart';
+import '../../../../core/utils/app_size.dart';
 
 class OnHomeError extends StatelessWidget {
   const OnHomeError({
@@ -17,10 +17,11 @@ class OnHomeError extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
+        spacing: AppSize.defaultSpacing,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(message),
-          SizedBox(height: 16.h),
+         
           ElevatedButton(
             onPressed: onRetry,
             child: const Text(AppStrings.tryAgain),

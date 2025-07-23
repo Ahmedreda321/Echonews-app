@@ -14,6 +14,7 @@ class AppTheme {
         brightness: Brightness.light,
         appBarTheme: _appBarTheme,
         elevatedButtonTheme: _appElevatedButtonTheme,
+        dividerTheme: _dividerTheme,
       );
 
   static ColorScheme get _lightColorScheme => const ColorScheme(
@@ -45,7 +46,10 @@ class AppTheme {
         textStyle:
             WidgetStatePropertyAll<TextStyle>(AppTextStyles.elevatedButton),
       ));
-
+  static DividerThemeData get _dividerTheme => const DividerThemeData(
+        color: AppColor.grayColor,
+        thickness: 1,
+      );
   static TextStyle textStyle(double size, FontWeight weight, Color color) {
     return TextStyle(
       fontSize: size,

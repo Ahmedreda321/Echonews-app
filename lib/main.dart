@@ -7,6 +7,6 @@ import 'echonews.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
-  setup();
+  await setup();
   runApp(const EchoNews());
 }

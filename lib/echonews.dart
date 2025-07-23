@@ -8,7 +8,7 @@ import 'core/theme/app_theme.dart';
 import 'core/utils/app_size.dart';
 import 'features/home/presentation/screens/home_screen.dart';
 
-class EchoNews extends StatelessWidget { 
+class EchoNews extends StatelessWidget {
   const EchoNews({super.key});
 
   @override
@@ -18,7 +18,7 @@ class EchoNews extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) => MaterialApp(
           home: BlocProvider(
-            create: (context) => HomeCubit( getIt()),
+            create: (context) => HomeCubit(getIt(), getIt()),
             child: const HomeScreen(),
           ),
           theme: AppTheme.lightTheme,

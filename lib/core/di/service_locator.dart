@@ -11,8 +11,10 @@ import '../network/network_info.dart';
 import '../utils/app_shared_preferences.dart';
 
 final getIt = GetIt.instance;
-setup() {
-  getIt.registerLazySingleton(() => AppPreferences());
+setup() async {
+  final appPreferences = AppPreferences();
+  await appPreferences.init();
+  getIt.registerLazySingleton<AppPreferences>(() => appPreferences);
   //Dio instance
   Dio dio = DioFactory.getDio();
   // ApiService instance

@@ -21,6 +21,7 @@ mixin _$HomeState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<News> news) loaded,
+    required TResult Function(List<News> news) loadedOffline,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$HomeState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<News> news)? loaded,
+    TResult? Function(List<News> news)? loadedOffline,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$HomeState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<News> news)? loaded,
+    TResult Function(List<News> news)? loadedOffline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$HomeState<T> {
     required TResult Function(_HomeInitial<T> value) initial,
     required TResult Function(HomeLoading<T> value) loading,
     required TResult Function(HomeLoaded<T> value) loaded,
+    required TResult Function(HomeLoadedOffline<T> value) loadedOffline,
     required TResult Function(HomeError<T> value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$HomeState<T> {
     TResult? Function(_HomeInitial<T> value)? initial,
     TResult? Function(HomeLoading<T> value)? loading,
     TResult? Function(HomeLoaded<T> value)? loaded,
+    TResult? Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult? Function(HomeError<T> value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$HomeState<T> {
     TResult Function(_HomeInitial<T> value)? initial,
     TResult Function(HomeLoading<T> value)? loading,
     TResult Function(HomeLoaded<T> value)? loaded,
+    TResult Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult Function(HomeError<T> value)? error,
     required TResult orElse(),
   }) =>
@@ -133,6 +139,7 @@ class _$HomeInitialImpl<T> implements _HomeInitial<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<News> news) loaded,
+    required TResult Function(List<News> news) loadedOffline,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -144,6 +151,7 @@ class _$HomeInitialImpl<T> implements _HomeInitial<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<News> news)? loaded,
+    TResult? Function(List<News> news)? loadedOffline,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -155,6 +163,7 @@ class _$HomeInitialImpl<T> implements _HomeInitial<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<News> news)? loaded,
+    TResult Function(List<News> news)? loadedOffline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -170,6 +179,7 @@ class _$HomeInitialImpl<T> implements _HomeInitial<T> {
     required TResult Function(_HomeInitial<T> value) initial,
     required TResult Function(HomeLoading<T> value) loading,
     required TResult Function(HomeLoaded<T> value) loaded,
+    required TResult Function(HomeLoadedOffline<T> value) loadedOffline,
     required TResult Function(HomeError<T> value) error,
   }) {
     return initial(this);
@@ -181,6 +191,7 @@ class _$HomeInitialImpl<T> implements _HomeInitial<T> {
     TResult? Function(_HomeInitial<T> value)? initial,
     TResult? Function(HomeLoading<T> value)? loading,
     TResult? Function(HomeLoaded<T> value)? loaded,
+    TResult? Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult? Function(HomeError<T> value)? error,
   }) {
     return initial?.call(this);
@@ -192,6 +203,7 @@ class _$HomeInitialImpl<T> implements _HomeInitial<T> {
     TResult Function(_HomeInitial<T> value)? initial,
     TResult Function(HomeLoading<T> value)? loading,
     TResult Function(HomeLoaded<T> value)? loaded,
+    TResult Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult Function(HomeError<T> value)? error,
     required TResult orElse(),
   }) {
@@ -250,6 +262,7 @@ class _$HomeLoadingImpl<T> implements HomeLoading<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<News> news) loaded,
+    required TResult Function(List<News> news) loadedOffline,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -261,6 +274,7 @@ class _$HomeLoadingImpl<T> implements HomeLoading<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<News> news)? loaded,
+    TResult? Function(List<News> news)? loadedOffline,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -272,6 +286,7 @@ class _$HomeLoadingImpl<T> implements HomeLoading<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<News> news)? loaded,
+    TResult Function(List<News> news)? loadedOffline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -287,6 +302,7 @@ class _$HomeLoadingImpl<T> implements HomeLoading<T> {
     required TResult Function(_HomeInitial<T> value) initial,
     required TResult Function(HomeLoading<T> value) loading,
     required TResult Function(HomeLoaded<T> value) loaded,
+    required TResult Function(HomeLoadedOffline<T> value) loadedOffline,
     required TResult Function(HomeError<T> value) error,
   }) {
     return loading(this);
@@ -298,6 +314,7 @@ class _$HomeLoadingImpl<T> implements HomeLoading<T> {
     TResult? Function(_HomeInitial<T> value)? initial,
     TResult? Function(HomeLoading<T> value)? loading,
     TResult? Function(HomeLoaded<T> value)? loaded,
+    TResult? Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult? Function(HomeError<T> value)? error,
   }) {
     return loading?.call(this);
@@ -309,6 +326,7 @@ class _$HomeLoadingImpl<T> implements HomeLoading<T> {
     TResult Function(_HomeInitial<T> value)? initial,
     TResult Function(HomeLoading<T> value)? loading,
     TResult Function(HomeLoaded<T> value)? loaded,
+    TResult Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult Function(HomeError<T> value)? error,
     required TResult orElse(),
   }) {
@@ -400,6 +418,7 @@ class _$HomeLoadedImpl<T> implements HomeLoaded<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<News> news) loaded,
+    required TResult Function(List<News> news) loadedOffline,
     required TResult Function(String message) error,
   }) {
     return loaded(news);
@@ -411,6 +430,7 @@ class _$HomeLoadedImpl<T> implements HomeLoaded<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<News> news)? loaded,
+    TResult? Function(List<News> news)? loadedOffline,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(news);
@@ -422,6 +442,7 @@ class _$HomeLoadedImpl<T> implements HomeLoaded<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<News> news)? loaded,
+    TResult Function(List<News> news)? loadedOffline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -437,6 +458,7 @@ class _$HomeLoadedImpl<T> implements HomeLoaded<T> {
     required TResult Function(_HomeInitial<T> value) initial,
     required TResult Function(HomeLoading<T> value) loading,
     required TResult Function(HomeLoaded<T> value) loaded,
+    required TResult Function(HomeLoadedOffline<T> value) loadedOffline,
     required TResult Function(HomeError<T> value) error,
   }) {
     return loaded(this);
@@ -448,6 +470,7 @@ class _$HomeLoadedImpl<T> implements HomeLoaded<T> {
     TResult? Function(_HomeInitial<T> value)? initial,
     TResult? Function(HomeLoading<T> value)? loading,
     TResult? Function(HomeLoaded<T> value)? loaded,
+    TResult? Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult? Function(HomeError<T> value)? error,
   }) {
     return loaded?.call(this);
@@ -459,6 +482,7 @@ class _$HomeLoadedImpl<T> implements HomeLoaded<T> {
     TResult Function(_HomeInitial<T> value)? initial,
     TResult Function(HomeLoading<T> value)? loading,
     TResult Function(HomeLoaded<T> value)? loaded,
+    TResult Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult Function(HomeError<T> value)? error,
     required TResult orElse(),
   }) {
@@ -480,6 +504,174 @@ abstract class HomeLoaded<T> implements HomeState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HomeLoadedImplCopyWith<T, _$HomeLoadedImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HomeLoadedOfflineImplCopyWith<T, $Res> {
+  factory _$$HomeLoadedOfflineImplCopyWith(_$HomeLoadedOfflineImpl<T> value,
+          $Res Function(_$HomeLoadedOfflineImpl<T>) then) =
+      __$$HomeLoadedOfflineImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<News> news});
+}
+
+/// @nodoc
+class __$$HomeLoadedOfflineImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$HomeLoadedOfflineImpl<T>>
+    implements _$$HomeLoadedOfflineImplCopyWith<T, $Res> {
+  __$$HomeLoadedOfflineImplCopyWithImpl(_$HomeLoadedOfflineImpl<T> _value,
+      $Res Function(_$HomeLoadedOfflineImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? news = null,
+  }) {
+    return _then(_$HomeLoadedOfflineImpl<T>(
+      news: null == news
+          ? _value._news
+          : news // ignore: cast_nullable_to_non_nullable
+              as List<News>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HomeLoadedOfflineImpl<T> implements HomeLoadedOffline<T> {
+  const _$HomeLoadedOfflineImpl({required final List<News> news})
+      : _news = news;
+
+  final List<News> _news;
+  @override
+  List<News> get news {
+    if (_news is EqualUnmodifiableListView) return _news;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_news);
+  }
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.loadedOffline(news: $news)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HomeLoadedOfflineImpl<T> &&
+            const DeepCollectionEquality().equals(other._news, _news));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_news));
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HomeLoadedOfflineImplCopyWith<T, _$HomeLoadedOfflineImpl<T>>
+      get copyWith =>
+          __$$HomeLoadedOfflineImplCopyWithImpl<T, _$HomeLoadedOfflineImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<News> news) loaded,
+    required TResult Function(List<News> news) loadedOffline,
+    required TResult Function(String message) error,
+  }) {
+    return loadedOffline(news);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<News> news)? loaded,
+    TResult? Function(List<News> news)? loadedOffline,
+    TResult? Function(String message)? error,
+  }) {
+    return loadedOffline?.call(news);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<News> news)? loaded,
+    TResult Function(List<News> news)? loadedOffline,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (loadedOffline != null) {
+      return loadedOffline(news);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HomeInitial<T> value) initial,
+    required TResult Function(HomeLoading<T> value) loading,
+    required TResult Function(HomeLoaded<T> value) loaded,
+    required TResult Function(HomeLoadedOffline<T> value) loadedOffline,
+    required TResult Function(HomeError<T> value) error,
+  }) {
+    return loadedOffline(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_HomeInitial<T> value)? initial,
+    TResult? Function(HomeLoading<T> value)? loading,
+    TResult? Function(HomeLoaded<T> value)? loaded,
+    TResult? Function(HomeLoadedOffline<T> value)? loadedOffline,
+    TResult? Function(HomeError<T> value)? error,
+  }) {
+    return loadedOffline?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HomeInitial<T> value)? initial,
+    TResult Function(HomeLoading<T> value)? loading,
+    TResult Function(HomeLoaded<T> value)? loaded,
+    TResult Function(HomeLoadedOffline<T> value)? loadedOffline,
+    TResult Function(HomeError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (loadedOffline != null) {
+      return loadedOffline(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HomeLoadedOffline<T> implements HomeState<T> {
+  const factory HomeLoadedOffline({required final List<News> news}) =
+      _$HomeLoadedOfflineImpl<T>;
+
+  List<News> get news;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HomeLoadedOfflineImplCopyWith<T, _$HomeLoadedOfflineImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -553,6 +745,7 @@ class _$HomeErrorImpl<T> implements HomeError<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<News> news) loaded,
+    required TResult Function(List<News> news) loadedOffline,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -564,6 +757,7 @@ class _$HomeErrorImpl<T> implements HomeError<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<News> news)? loaded,
+    TResult? Function(List<News> news)? loadedOffline,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -575,6 +769,7 @@ class _$HomeErrorImpl<T> implements HomeError<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<News> news)? loaded,
+    TResult Function(List<News> news)? loadedOffline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -590,6 +785,7 @@ class _$HomeErrorImpl<T> implements HomeError<T> {
     required TResult Function(_HomeInitial<T> value) initial,
     required TResult Function(HomeLoading<T> value) loading,
     required TResult Function(HomeLoaded<T> value) loaded,
+    required TResult Function(HomeLoadedOffline<T> value) loadedOffline,
     required TResult Function(HomeError<T> value) error,
   }) {
     return error(this);
@@ -601,6 +797,7 @@ class _$HomeErrorImpl<T> implements HomeError<T> {
     TResult? Function(_HomeInitial<T> value)? initial,
     TResult? Function(HomeLoading<T> value)? loading,
     TResult? Function(HomeLoaded<T> value)? loaded,
+    TResult? Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult? Function(HomeError<T> value)? error,
   }) {
     return error?.call(this);
@@ -612,6 +809,7 @@ class _$HomeErrorImpl<T> implements HomeError<T> {
     TResult Function(_HomeInitial<T> value)? initial,
     TResult Function(HomeLoading<T> value)? loading,
     TResult Function(HomeLoaded<T> value)? loaded,
+    TResult Function(HomeLoadedOffline<T> value)? loadedOffline,
     TResult Function(HomeError<T> value)? error,
     required TResult orElse(),
   }) {

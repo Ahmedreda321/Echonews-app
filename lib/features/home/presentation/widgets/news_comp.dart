@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news/core/constants/app_constants.dart';
 import 'package:news/core/extensions/navigation_extensions.dart';
 import 'package:news/core/theme/app_colors.dart';
 import 'package:news/core/utils/app_size.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/app_assets.dart';
 import '../models/news.dart';
 import '../screens/web_view.dart';
 
@@ -30,10 +30,7 @@ class NewsWidget extends StatelessWidget {
 
           // description
           NewsDescription(description: news.description),
-          const Divider(
-            color: Colors.grey,
-            thickness: 1,
-          ),
+          const Divider(),
         ],
       ),
     );
@@ -87,8 +84,7 @@ class NewsImage extends StatelessWidget {
             right: 12,
             child: CachedNetworkImage(
               imageUrl: imageUrl,
-              color: AppColor.newsImageColor,
-              colorBlendMode: BlendMode.color,
+              colorBlendMode: BlendMode.modulate,
               placeholder: (context, url) => const Center(
                 child: CircularProgressIndicator(),
               ),
@@ -119,6 +115,7 @@ class NewsTitle extends StatelessWidget {
         onTap: () {
           context.push(
             Webviwe(
+              title: title,
               url: url,
             ),
           );
@@ -134,8 +131,8 @@ class ErrorImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
-      AppConstants.defaultImage,
+    return Image.asset(
+      AppAssets.defaultImage,
       height: AppSize.newsImageHeight,
       fit: BoxFit.cover,
       width: AppSize.newsImageWidth,
