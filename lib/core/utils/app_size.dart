@@ -4,12 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppSize {
   AppSize._();
 
-  // Design 
+  // Design
   static const Size designSize = Size(360, 800);
 
-
   // General
-  static  double small = 8.0.h;
+  static double small = 8.0.h;
   static double medium = 16.0.h;
   static double large = 24.0.h;
 
@@ -27,4 +26,8 @@ class AppSize {
   static double categorySectionHeight = 45.h;
 
   static double defaultSpacing = 10.h;
+
+  static double imageTopPadding = 20.h;
+
+  static double imageLeftPadding = 12.w;
 }

@@ -15,3 +15,31 @@ EchoNews is a Flutter application that delivers the latest news articles from va
 
 ## Project Structure
 
+```
+lib/
+├── core/
+│   ├── constants
+│   ├── di
+│   ├── network
+│   ├── errors
+│   ├── utils
+│   ├── services
+│   ├── theme
+│   └── extensions
+├── features/
+│   └── home/ 
+│       ├── data/ 
+│       │    └── datasources/ 
+│       │        ├── mapper/
+│       │        ├── models/
+│       │        └── repositories/
+│       └── presentation/
+│           ├── cubit/
+│           ├── models/
+│           ├── screens/
+│           └── widgets/
+│ 
+│      
+├── echonews.dart
+└── main.dart
+```

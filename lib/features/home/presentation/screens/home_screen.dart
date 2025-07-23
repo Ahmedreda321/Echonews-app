@@ -27,28 +27,28 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NewsAppBar(),
-      body: Column(
-        spacing: AppSize.defaultSpacing,
-        children: [
-          // Categories Section
-          const CategoriesSection(),
-
-          // ofline mode banner
-          BlocBuilder<HomeCubit, HomeState>(
-            buildWhen: (previous, current) => current is HomeLoadedOffline,
-            builder: (context, state) {
-              return state is HomeLoadedOffline
-                  ? OfflineModeBanner(
-                      onRetry: () =>
-                          context.read<HomeCubit>().loadInitialNews(),
-                    )
-                  : const SizedBox.shrink();
-            },
-          ),
-
-          // News Section
-          const NewsSection(),
-        ],
+      body: BlocBuilder<HomeCubit, HomeState>(
+        buildWhen: (previous, current) =>
+            current is HomeLoading ||
+            current is HomeLoaded ||
+            current is HomeLoadedOffline ||
+            current is HomeError,
+        builder: (context, state) {
+          return Column(
+            spacing: AppSize.defaultSpacing,
+            children: [
+              // Categories Section
+              const CategoriesListWidget(),
+              
+              // Offline Banner
+              if (state is HomeLoadedOffline)
+                const OfflineBannerWidget(),
+              
+              // News Content
+              const NewsContentWidget(),
+            ],
+          );
+        },
       ),
     );
   }
