@@ -7,6 +7,7 @@ import 'package:news/core/utils/app_size.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/app_padding.dart';
 import '../models/news.dart';
 import '../screens/web_view.dart';
 
@@ -17,9 +18,9 @@ class NewsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: AppPadding.newsPadding,
       child: Column(
-        spacing: 10.h,
+        spacing: AppSize.defaultSpacing,
         mainAxisSize: MainAxisSize.min,
         children: [
           // title
@@ -71,8 +72,8 @@ class NewsImage extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            top: 20,
-            left: 12,
+            top: AppSize.imageTopPadding,
+            left: AppSize.imageLeftPadding,
             child: Container(
               width: AppSize.newsImageWidth,
               height: AppSize.newsImageHeight,
@@ -80,8 +81,8 @@ class NewsImage extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 12,
-            right: 12,
+            bottom: AppSize.imageLeftPadding,
+            right: AppSize.imageLeftPadding,
             child: CachedNetworkImage(
               imageUrl: imageUrl,
               colorBlendMode: BlendMode.modulate,

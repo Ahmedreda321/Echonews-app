@@ -8,7 +8,7 @@ class AppStrings {
   static const int zero = 0;
   static const String tryAgain = 'Try Again';
   static const String noNews = "There's no news Now\nPlease try again later";
-   static const String offlineMode = 'You are offline mode\nPlease check your connection';
+   static const String offlineMode = 'You are in offline mode\nPlease check your connection';
   //******************************************************************************************************************* *//
   //? Error Messages
   //******************************************************************************************************************* *//
